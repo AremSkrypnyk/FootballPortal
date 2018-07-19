@@ -1,105 +1,339 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>FootballPortal</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href="/styles/site.css" rel="stylesheet">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FootballPortal</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link href="/styles/site.css" rel="stylesheet">
 
-		{{!-- This file provides the default styling for the KeystoneJS Content Editor
-			- only renders when user is logged in and admin--}}
-		{{{isAdminEditorCSS user}}}
+	{{!-- This file provides the default styling for the KeystoneJS Content Editor
+        - only renders when user is logged in and admin--}}
+	{{{isAdminEditorCSS user}}}
 
-		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8 --}}
-		<!--[if lt IE 9]>
-			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    //- Safely remove this block if you are not targeting IE8 --}}
+	<!--[if lt IE 9]>
+	<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+	<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
-	</head>
-	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">FootballPortal</a>
-						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
+</head>
+<body>
+<div class="site-header">
+
+	<div class="site-header__body">
+
+		<div class="site-header__col site-header__col1">
+			<a href="http://www.skysports.com" class="svg-logo site-header__logo">
+				<img class="svg-logo__image" src="/images/Sky-Sports-Logo-transparent.svg"
+					 onerror="this.onerror=null;this.src='/images/Sky-Sports-Logo.png'">
+			</a>
+		</div>
+
+
+		<div class="site-header__col site-header__col3">
+
+
+		</div>
+
+		<a class="site-header__col site-header__col4 site-header__nav-button-hit-area" data-role="open-left-hand-nav"
+		   href="#no-js-nav" tabindex="1">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" xml:space="preserve" class="site-header__nav-button">
+            <rect y="384" width="2048" height="256"></rect>
+            <rect y="896" width="2048" height="256"></rect>
+            <rect y="1408" width="2048" height="256"></rect>
+        </svg>
+		</a>
+
+	</div>
+
+	<!-- desktop nav -->
+	<div class="site-nav-desktop__wrap adaptive-content adaptive-content--loaded" data-fn="adaptive-content"
+		 data-lite="true" aria-hidden="true" id="widgetLite-10" style="animation: adaptiveContent20281 0.01s linear;">
+		<div class="site-nav-desktop" role="navigation" data-fn="site-nav-desktop" data-lite="true" id="widgetLite-14">
+			<ul class="site-nav-desktop__body">
+				<li class="site-nav-desktop__item">
+					<a href="/" class="site-nav-desktop__item-link">
+						Home</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="#site-nav-desktop-sports-more-nav"
+					   class="site-nav-desktop__item-link site-nav-desktop__item-link--more"
+					   aria-controls="site-nav-desktop-sports-more-nav" id="site-nav-desktop-sports-more">
+						Sports</a>
+					<div class="site-nav-desktop__menu" aria-labelledby="site-nav-desktop-sports-more"
+						 id="site-nav-desktop-sports-more-nav">
+						<div class="site-nav-desktop__menu-body">
+							<ul class="site-nav-desktop__menu-links">
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/football">
+										Football</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/f1">
+										F1</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/cricket">
+										Cricket</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/rugby-union">
+										Rugby Union</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/rugby-league">
+										Rugby League</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/golf">
+										Golf</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/boxing">
+										Boxing</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/tennis">
+										Tennis</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/cycling">
+										Cycling</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/racing">
+										Racing</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/world-cup">
+										World Cup</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/darts">
+										Darts</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/nfl">
+										NFL</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/motorsport">
+										Motorsport</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/netball">
+										Netball</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/gaa">
+										GAA</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/wwe">
+										WWE</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/esports">
+										eSports</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/more-sports">
+										More Sports</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/whyte-vs-parker">
+										Whyte vs Parker</a>
+								</li>
 							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="/live-scores" class="site-nav-desktop__item-link">
+						Score Centre</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="/watch/video" class="site-nav-desktop__item-link">
+						Video</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="/watch" class="site-nav-desktop__item-link">
+						TV</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="https://m.skybet.com?aff=9749&amp;dcmp=ss_main_nav" class="site-nav-desktop__item-link"
+					   target="_blank">
+						Sky Bet</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="/games" class="site-nav-desktop__item-link">
+						Games</a>
+				</li>
+				<li class="site-nav-desktop__item">
+					<a href="#site-nav-desktop-more-more-nav"
+					   class="site-nav-desktop__item-link site-nav-desktop__item-link--more"
+					   aria-controls="site-nav-desktop-more-more-nav" id="site-nav-desktop-more-more">
+						More</a>
+					<div class="site-nav-desktop__menu site-nav-desktop__menu--right"
+						 aria-labelledby="site-nav-desktop-more-more" id="site-nav-desktop-more-more-nav">
+						<div class="site-nav-desktop__menu-body">
+							<ul class="site-nav-desktop__menu-links">
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/transfer-centre">
+										Transfer Centre</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/watch/sport-on-sky">
+										Live on Sky</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/watch/get-sky">
+										Get Sky Sports</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/watch/tv-shows">
+										TV Shows</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/watch/tv-guide">
+										TV Guide</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/competitions">
+										Competitions</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="http://go.sky.com/" target="_blank">
+										Sky Go</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link"
+									   href="http://www.nowtv.com/promo/sky-sports?DCMP=ilc_skysports_moredropdownlink"
+									   target="_blank">
+										Now TV</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://pubfinder.sky.com/"
+									   target="_blank">
+										Pub Finder</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://www.teamsky.com"
+									   target="_blank">
+										Team Sky</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/watch/tv-shows/sportswomen">
+										Sportswomen</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/scholarships">
+										Sports Scholarships</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/clubsincommunities">
+										Clubs in Communities</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/podcasts">
+										Podcasts</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/mobile">
+										Mobile</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://twitter.com/SkySports"
+									   target="_blank">
+										Twitter</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://www.facebook.com/SkySports"
+									   target="_blank">
+										Facebook</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://livingforsport.skysports.com/"
+									   target="_blank">
+										Living for Sport</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="/contact-us">
+										Contact Us</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link"
+									   href="https://www.sky.com/help/articles/skycom-terms-and-conditions"
+									   target="_blank">
+										Terms &amp; Conditions</a>
+								</li>
+								<li class="site-nav-desktop__menu-item">
+									<a class="site-nav-desktop__menu-link" href="https://www.sky.com" target="_blank">
+										Sky.com</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<a href="http://www.skysports.com/watch"
+			   class="site-nav-desktop__watch-button no-default-hover no-default-active"><span
+					class="site-nav-desktop__watch-button__label">Pro Users Login</span></a>
 		</div>
-		<div id="body">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
+	</div>
+</div>
+
+<div id="body">
+	<!--
+        Flash messages allow you to display once-off status messages to users, e.g. form
+        validation errors, success messages, etc
+    -->
+	{{#if messages}}
+		<div id="flash-messages" class="container">
+			{{#if messages.info}}
 				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
+					{{{flashMessages messages.info}}}
 				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
 			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
+			{{#if messages.success}}
+				<div class="alert alert-success">
+					{{{flashMessages messages.success}}}
+				</div>
+			{{/if}}
+			{{#if messages.warning}}
+				<div class="alert alert-warning">
+					{{{flashMessages messages.warning}}}
+				</div>
+			{{/if}}
+			{{#if messages.error}}
+				<div class="alert alert-danger">
+					{{{flashMessages messages.error}}}
+				</div>
+			{{/if}}
 		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-			</div>
-		</div>
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-		{{{isAdminEditorJS user}}}
-	</body>
+	{{/if}}
+	<!-- The content block should contain the body of your template's content-->
+	{{{body}}}
+</div>
+<div class="container">
+	<div id="footer">
+		<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+	</div>
+</div>
+{{!--
+    //- jQuery 1.11.3 is included by default, and required by both Bootstrap
+    //- and the KeystoneJS Content Editor. If you are not targeting IE8,
+    //- you can upgrade to 2.1.4 (also bundled) for better performance.
+--}}
+<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+{{!--
+    //- Customise which Bootstrap javascript files are served by including
+    //- them specifically here, instead of bootstrap-3.3.5.min.js
+--}}
+<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+{{{isAdminEditorJS user}}}
+</body>
 </html>
