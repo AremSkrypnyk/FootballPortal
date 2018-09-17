@@ -1,0 +1,149 @@
+/* SDC site layout
+  =========================================== */
+
+%site-wrap-basic {
+  @extend %site-wrap-basic-width!optional;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.site-wrap {
+  max-width: $site-max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%site-wrap-basic-width {
+  max-width: $site-max-width - $gutter-l*2 !important;
+}
+
+.site-wrap-padding {
+  padding-left: $gutter-l;
+  padding-right: $gutter-l;
+}
+
+%site-wrap-amp {
+  max-width: $amp-site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $amp-site-max-width-indent;
+  padding-right: $amp-site-max-width-indent;
+}
+
+.site-indent[class] {
+  padding-left: $site-indent-l;
+  padding-right: $site-indent-l;
+}
+
+// standard vertical margin
+.site-component-vertical-margin {
+  margin-bottom: $component-vertical-margin-l;
+}
+
+// use for when you wish to cancel the above margin on a succeeding element
+.site-component-vertical-margin-negative {
+  margin-top: -$component-vertical-margin-l;
+}
+
+// large vertical margin
+.site-component-vertical-margin-l {
+  margin-bottom: $component-vertical-margin-xxl;
+}
+
+// small vertical margin
+.site-component-vertical-margin-s {
+  margin-bottom: $component-vertical-margin-s;
+}
+
+// A used to give text based content like articles a white background, rather than the default gray
+.section-wrap {
+  background: white;
+}
+
+.section-wrap--padding {
+  padding: $component-vertical-margin-l 0;
+}
+
+// A shaded box for large breakout areas underneath a section wrap, such as related content on articles
+.section-wrap--shade {
+  padding: $component-vertical-margin-xxl - 5 0 $component-vertical-margin-xxl + 5;
+  @extend %glints-panel-gradient!optional;
+}
+
+// A wrapper for non article but heavily text based content like blogs to restrict the reading column width
+.section-wrap__article-column {
+  @extend .site-wrap-padding!optional;
+  @extend %sdc-article-body-width-limiter !optional;
+}
+
+// live blogs sometimes use a component header inside, if so remove the extra level of padding
+.section-wrap__article-column
+.sdc-site-component-header__body {
+  padding: 0
+}
+
+@media #{$bp-m} {
+  .site-wrap-padding {
+    padding-left: $gutter-m;
+    padding-right: $gutter-m
+  }
+
+  .site-component-vertical-margin {
+    margin-bottom: $component-vertical-margin-m;
+  }
+
+  .site-component-vertical-margin-negative {
+    margin-top: -$component-vertical-margin-m;
+  }
+
+  .site-component-vertical-margin-l {
+    margin-bottom: $component-vertical-margin-xl;
+  }
+}
+
+@media #{$bp-s} {
+  .site-wrap-padding {
+    padding-left: $gutter-s;
+    padding-right: $gutter-s;
+  }
+
+  .site-component-vertical-margin {
+    margin-bottom: $component-vertical-margin-s;
+  }
+
+  .site-component-vertical-margin-negative {
+    margin-top: -$component-vertical-margin-s;
+  }
+
+  .site-component-vertical-margin-l {
+    margin-bottom: $component-vertical-margin-l + 6;
+  }
+
+  .section-wrap--shade {
+    padding: $component-vertical-margin-xl 0;
+  }
+
+  .section-wrap--padding {
+    padding: $component-vertical-margin-l 0;
+  }
+}
+
+@media #{$bp-xs} {
+  .site-wrap-padding,
+  .site-indent[class] {
+    padding-left: $gutter-xs;
+    padding-right: $gutter-xs;
+  }
+
+  .site-wrap--mobile-edge {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .site-wrap.sdc-site-tiles__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

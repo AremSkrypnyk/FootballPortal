@@ -1,0 +1,75 @@
+.sdc-site-au {
+    text-align: center;
+    line-height: 0;
+}
+
+// mpu
+.sdc-site-au__mpu {
+    display: inline-block;
+    min-height: 250px;
+    min-width: 300px;
+}
+
+// leaderboard
+.sdc-site-au__leaderboard {
+    display: inline-block;
+    min-height: 90px;
+    min-width: 728px;
+}
+
+// takeover ad
+// Use font size: 0 to prevent white space appearing when ad is blank
+.sdc-site-au[data-ad-format="takeover"] {
+    font-size: 0;
+}
+
+.sdc-site-au__takeover {
+    display: none;
+}
+
+// sponsor position
+.sdc-site-au--sponsor-position-container {
+    position: relative;
+    direction: rtl;
+}
+
+.sdc-site-au[data-ad-format="sponsor-position"] {
+    width: 88px;
+    height: 31px;
+}
+
+.sdc-site-au--sponsor-position-container > .sdc-site-au[data-ad-format="sponsor-position"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sdc-site-au--sponsor-position-container
+.sdc-site-component-header__body {
+    padding: 0 136px 0 0;
+    direction: ltr;
+}
+
+@media all and #{$sdc-site-mpu-media-mobile} {
+    .sdc-site-au__leaderboard {
+        min-height: 50px;
+        min-width: 300px;
+    }
+
+    .sdc-site-au--sponsor-position-container
+    .sdc-site-component-header__body {
+        padding: 0 100px 0 0;
+    }
+}
+
+@media all and #{$sdc-site-mpu-media-display} {
+    .sdc-site-au__takeover {
+        display: inline-block;
+        min-width: 1px;
+    }
+
+    .sdc-site-au[data-ad-format="sponsor-position"] {
+        width: 120px;
+        height: 60px;
+    }
+}

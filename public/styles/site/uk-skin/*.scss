@@ -1,0 +1,7 @@
+.blackjack-sdc-site-live-on-sky__category[class] {
+  @extend %blackjack-sdc-ui-label!optional;
+}
+
+.site-nav-desktop__watch-button {
+  @include sdc-ui-button(white,  $pictor);
+}

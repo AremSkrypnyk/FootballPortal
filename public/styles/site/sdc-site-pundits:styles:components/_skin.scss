@@ -1,0 +1,23 @@
+/* sdc-site-pundits SKIN */
+/* ========= */
+
+$sdc-site-pundits-bg: white!default;
+$sdc-site-pundits-tag-color: #0a1388!default;
+
+$sdc-site-pundits-indent-m: 2.2em!default;
+$sdc-site-pundits-indent-s: 16px!default;
+
+$sdc-site-pundits-figure-indent-mobile: 16px!default;
+$sdc-site-pundits-figure-width-mobile: 116px!default;
+$sdc-site-pundits-figure-border: 1px solid #ccc!default;
+$sdc-site-pundits-figure-background: white!default;
+
+$sdc-site-pundits-hover-transition: 0.5s!default;
+$sdc-site-pundits-hover-bg: #eee!default;
+$sdc-site-pundits-hover-color: inherit!default;
+
+// breakpoints
+$sdc-site-pundits-bp-desktop: "all and (max-width: 859px)"!default;
+$sdc-site-pundits-bp-tablet-desktop: "all and (min-width: 600px) and (max-width: 859px)"!default;
+$sdc-site-pundits-bp-tablet: "all and (max-width: 599px)"!default;
+$sdc-site-pundits-bp-mobile: "all and (max-width: 480px)"!default;

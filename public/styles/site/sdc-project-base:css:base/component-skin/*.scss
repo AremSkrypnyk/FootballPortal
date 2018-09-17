@@ -1,0 +1,1078 @@
+@media #{$bp-xs} {
+
+  body {
+    background: $grus;
+  }
+
+  .sdc-site-breaking-news[class] {
+    margin-bottom: 0;
+  }
+
+  .sdc-site-header ~ .section-wrap,
+  .sdc-site-header ~ .sdc-site-localnav {
+    margin-top: 0;
+  }
+
+  // remove gap when section wrap is directly after localnav
+  .sdc-site-localnav ~ .section-wrap {
+    margin-top: -$component-vertical-margin-s;
+  }
+
+}
+
+/* GLOBAL site skin
+   Use for anything not in a component
+  =========================================== */
+
+body {
+  background-image: $caelum;
+}
+
+.sdc-site-embedded {
+  background: white;
+}
+
+// HEADER
+// Vertical margins
+.sdc-site-header,
+.blackjack-sdc-digrev-header,
+.sdc-site-localnav {
+  @extend .site-component-vertical-margin!optional;
+}
+
+// negate the above vertical margins in certain scenarios
+.sdc-site-header ~ .section-wrap,
+.sdc-site-header + .sdc-site-localnav,
+.sdc-site-localnav ~ .section-wrap,
+.sdc-site-localnav ~ .sdc-site-match-header,
+.sdc-site-tabs + .section-wrap,
+.sdc-site-au__takeover {
+  @extend .site-component-vertical-margin-negative!optional;
+}
+
+// FOOTER
+// Add vertical margin to top of footer
+.sdc-site-footer[class] {
+  margin-top: $component-vertical-margin-l
+}
+
+// SECTION WRAP
+// negate footer margin in certain scenarios
+.section-wrap + .sdc-site-footer[class],
+.section-wrap--shade + .sdc-site-footer[class] {
+  margin-top: 0;
+}
+
+// remove margin bottom on tiles when inside section wrap
+.section-wrap .sdc-site-tiles:last-child,
+.section-wrap--shade .sdc-site-tiles:last-child {
+  margin-bottom: 0
+}
+
+// prevent double padding when article-author preceeds article-header,
+// or immediately follows it
+.sdc-article-author + .sdc-article-header[class],
+.sdc-article-header + .sdc-article-author[class] {
+  padding-top: 0;
+}
+
+// extends
+.sdc-article-author[class] {
+  @extend .site-wrap-padding!optional;
+  @extend %sdc-article-body-width-limiter!optional;
+}
+
+/* SDC article body skin
+  =========================================== */
+// variables
+$site-base-font-size: 18px!default;
+$sdc-article-body-edge-margin: 0!default;
+$sdc-article-body-widget-margin-xlarge: 2.25em!default;
+$sdc-article-body-background-color: #fff!default;
+$sdc-article-body-wrap-class: ".site-wrap-padding"!default;
+
+$sdc-article-body-v-margin: $component-vertical-margin-l!default;
+$sdc-article-body-v-margin-medium: $component-vertical-margin-xl!default;
+$sdc-article-body-v-margin-large: $component-vertical-margin-xxl!default;
+$sdc-article-body-box-sizing: content-box!default;
+/* SDC article factbox skin
+  =========================================== */
+
+$sdc-article-factbox-glint: "%glints-border-top, %glints-border-bottom"!default;
+$sdc-article-factbox-border-top: 0!default;
+$sdc-article-factbox-border-bottom: 0!default;
+$sdc-article-factbox-text-indent: 48px!default;
+$sdc-article-factbox-title-align: left!default;
+
+// variables
+$sdc-article-gallery-caption-font-size-default: .875rem !default;
+$sdc-article-gallery-caption-font-size-medium: 1rem !default;
+
+// extends
+.sdc-article-gallery {
+  @extend %site-wrap-basic!optional;
+}
+
+.sdc-article-gallery__caption[class],
+.sdc-article-gallery__info-wrap[class] {
+  @extend %sdc-ui-media-caption!optional;
+}
+
+.sdc-article-gallery__info-wrap[class] {
+  @extend %sdc-article-body-width-limiter!optional;
+  background: transparent;
+}
+
+/* SDC article header skin
+  =========================================== */
+
+// variables
+$sdc-article-header-wrap-class: ".site-wrap"!default;
+$sdc-article-header-light-text-colour: $crux!default;
+
+// extends
+.sdc-article-header__wrap {
+  @extend .site-wrap !optional;
+  @extend .site-wrap-padding!optional;
+}
+
+.sdc-article-header__wrap[class]{
+  @extend %sdc-article-body-width-limiter !optional;
+}
+
+.sdc-article-header__title[class] {
+  margin-bottom: 0!important
+}
+
+/* SDC article image skin
+  =========================================== */
+// variables
+$sdc-article-image-caption-align: left!default;
+$sdc-article-image-caption-color: $crux!default;
+
+// extends
+.sdc-article-image:not(.sdc-article-image--full-bleed) {
+  @extend %site-wrap-basic!optional;
+}
+
+.sdc-article-image__caption[class] {
+  @extend %sdc-ui-media-caption!optional;
+}
+
+/* SDC article quote skin
+  =========================================== */
+
+
+$sdc-article-quote-margin: 1.5em!default;
+$sdc-article-quote-margin-right: auto!default;
+$sdc-article-quote-margin-left: auto!default;
+$sdc-article-quote-padding: 96px!default;
+$sdc-article-quote-vertical-padding: 2.2em!default;
+$sdc-article-quote-vertical-padding-small: 1.5em!default;
+// $sdc-article-quote-border-top: 0!default;
+// $sdc-article-quote-border-right: 0!default;
+// $sdc-article-quote-border-bottom: 0!default;
+// $sdc-article-quote-border-left: 0!default;
+$sdc-article-quote-glint: "%glints-border-top, %glints-border-bottom"!default;
+$sdc-article-quote-border-radius: 0!default;
+$sdc-article-quote-text-alignment: left!default;
+$sdc-article-quote-font-style: normal!default;
+$sdc-article-quote-start: "\""!default;
+$sdc-article-quote-end: "\""!default;
+$sdc-article-quote-max-width: 700px!default;
+
+// SDC article related stories
+// ===========================================
+
+$sdc-article-related-stories-spacing: 24px !default;
+$sdc-article-related-stories-border-colour: $lacerta !default;
+$sdc-article-related-stories-link-colour: $aquila !default;
+
+$sdc-article-related-stories-title-colour: $auriga !default;
+$sdc-article-related-stories-title-font-size: inherit !default;
+
+$sdc-article-related-stories-headline-colour: inherit !default;
+$sdc-article-related-stories-headline-font-size: inherit !default;
+
+$sdc-article-related-stories-thumbnail-size: 50px !default;
+$sdc-article-related-stories-two-col-breakpoint: 681px !default;
+
+/* SDC article strapline skin
+  =========================================== */
+
+// variables
+$sdc-article-strapline-glint: "%glints-border-top, %glints-border-bottom"!default;
+$sdc-article-strapline-border-top: 0!default;
+$sdc-article-strapline-border-bottom: 0!default;
+$sdc-article-strapline-text-indent: 48px!default;
+
+$sdc-article-strapline-break-small: 481px !default;
+$sdc-article-strapline-break-medium: 681px !default;
+
+$sdc-article-strapline-background-color: #F2F2F2 !default;
+$sdc-article-strapline-text-color: #4a4a4a !default;
+
+$sdc-article-strapline-link-padding: 21px !default;
+
+$sdc-article-strapline-base-font-size: 1em !default;
+
+$sdc-article-strapline-title-font-size-default: 1.222222em !default;
+$sdc-article-strapline-title-font-size-medium: 1.333333em !default;
+$sdc-article-strapline-text-font-size-default: 0.88889em !default;
+$sdc-article-strapline-text-font-size-medium: 1em !default;
+
+$sdc-article-strapline-button-font-size-default: 0.8888888889em !default;
+$sdc-article-strapline-button-color: $aquila !default;
+$sdc-article-strapline-button-margin-top: 1em !default;
+
+$sdc-article-strapline-border-radius: 5px !default;
+$sdc-article-strapline-border-color: $sdc-article-strapline-background-color !default;
+$sdc-article-strapline-border: 1px solid $sdc-article-strapline-border-color !default;
+
+// Only used in default-lite-layout
+$sdc-article-strapline-text-indent: 32px !default;
+$sdc-article-strapline-vertical-padding: 2.2em !default;
+$sdc-article-strapline-vertical-padding-small: 1.5rem !default;
+$sdc-article-strapline-glint: greetings-to-world !default;
+
+// extends
+.sdc-article-strapline--default-layout {
+  .sdc-article-strapline__button {
+    @include sdc-ui-button($color: $sdc-article-strapline-button-color, $heavy: true);
+  }
+}
+
+.sdc-article-strapline--button-layout {
+  .sdc-article-strapline__button:after {
+    @include sdc-ui-link-arrow;
+  }
+}
+
+/* SDC article video skin
+  =========================================== */
+
+// variables
+$sdc-article-video-caption-text-default: .875rem !default;
+$sdc-article-video-caption-text-medium: 1rem !default;
+
+// extends
+.sdc-article-video:not(.sdc-article-video--full-bleed) {
+  @extend %site-wrap-basic!optional;
+}
+
+.sdc-article-video__caption[class] {
+  @extend %sdc-ui-media-caption!optional;
+}
+
+.sdc-article-video,
+.sdc-article-image,
+.sdc-site-view-manager {
+  max-width: 976px!important;
+  margin-right: auto!important;
+  margin-left: auto!important;
+  padding-right: 0!important;
+  padding-left: 0!important;
+}
+
+/* digrev footer skin
+  =========================================== */
+
+// variables
+
+// extends
+.site-footer__body {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional
+}
+
+.site-footer a:hover {
+  background-color: rgba(0,0,0,0.08);
+}
+
+/* digrev header skin
+  =========================================== */
+
+// variables
+$blackjack-sdc-digrev-header-zindex: 999999!default;
+
+// extends
+.site-header__body,
+.site-nav-desktop__wrap {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional
+}
+
+.blackjack-sdc-digrev-header >
+.site-header {
+  background: linear-gradient(to bottom, gradient(sky-sports, end) 0%, gradient(sky-sports, start) 100%);
+}
+
+// red watch button
+a.site-nav-desktop__watch-button {
+  background: $pictor;
+  border-radius: 0;
+}
+
+a.site-nav-desktop__watch-button:after {
+  content: none;
+}
+
+.site-header a:hover {
+  background-color: rgba(0,0,0,0.08);
+}
+
+@media #{$bp-xs}{
+  .blackjack-sdc-digrev-header {
+    margin-bottom: 0
+  }
+}
+// add small margin bottom to inner takeover element
+.sdc-site-au__takeover {
+  @extend .site-component-vertical-margin-s!optional;
+}
+
+// pass site wrap to sponsor container div
+.sdc-site-au--sponsor-position-container {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+@media #{$bp-xs}{
+  .sdc-site-header +
+  .sdc-site-au--sponsor-position-container {
+    margin-top: $component-vertical-margin-s
+  }
+}
+
+/* SDC site auth manager
+  =========================================== */
+// variables
+$sdc-site-auth-manager-z-index: $z-index-overlay!default;
+
+// extends
+.sdc-site-auth-manager__close:hover {
+  @include sdc-ui-block-link-underline($thickness: 2px);
+}
+
+.sdc-site-auth-manager__submit {
+  @include sdc-ui-button($color: white, $background-color: $aquila);
+}
+
+/* SDC site breaking news skin
+  =========================================== */
+
+// variables
+$sdc-site-breaking-news-bg: $bootes!default;
+$sdc-site-breaking-news-headline-color: black!default;
+$sdc-site-breaking-news-vertical-margin: 0 0 $component-vertical-margin-s!default;
+
+// extends
+.sdc-site-breaking-news__body {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+}
+
+.sdc-site-breaking-news__headline[class] {
+  font-weight: bold;
+}
+/* commercial features skin */
+/* ======= */
+
+.sdc-site-commercial-features {
+  @extend %glints-box!optional;
+}
+
+.sdc-site-commercial-features__links {
+  @extend %sdc-ui-bullet-list!optional;
+}
+/* SDC component header skin
+  =========================================== */
+
+// variables
+
+// extends
+.sdc-site-component-header__body {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional
+}
+
+.sdc-site-component-header--h3 {
+  text-align: center;
+}
+
+/* SDC site directory skin
+  =========================================== */
+$sdc-site-directory-row-hover-background: $monoceros!default;
+
+.sdc-site-directory__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional
+}
+
+.sdc-site-directory__section[class] {
+  @extend %glints-box!optional;
+  @extend %glints-box-padding!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-directory__heading {
+  @extend .sdc-site-component-header--h3!optional;
+  text-align: center;
+}
+
+/* SDC site error page
+  =========================================== */
+
+.sdc-site-error-page-container,
+*:not(.sdc-site-error-page-container) >
+.sdc-site-error-page {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-component-vertical-margin-l!optional;
+}
+
+.sdc-site-error-page__link-list {
+  @extend %sdc-ui-bullet-list!optional;
+}
+
+/* SDC site filter skin
+  =========================================== */
+
+// variables
+$sdc-site-filter-z-index: $z-index-overlay!default;
+$sdc-site-filter__body-links-highlight-border-color: $aquila!default;
+$sdc-site-filter__body-links-hover-bg: $monoceros!default;
+
+// extends
+.sdc-site-filter__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+.sdc-site-filter__body-content {
+  @extend %glints-box!optional;
+}
+
+/* SDC site fixres skin
+  =========================================== */
+
+// variables
+$sdc-site-fixres-keyline: 1px solid $lacerta!default;
+$sdc-site-fixres-live-background: $pictor!default;
+$sdc-site-fixres-row-hover-background: $monoceros!default;
+
+// extends
+.sdc-site-fixres-wrap {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-fixres-box {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-fixres__header1 {
+  @extend .sdc-site-component-header--h2!optional;
+}
+
+.sdc-site-fixres__header2 {
+  @extend .sdc-site-component-header--h3!optional;
+}
+
+.sdc-site-fixres__header3 {
+  @extend .sdc-site-component-header--h5!optional;
+}
+
+.sdc-site-fixres__header3 a:after {
+  @include sdc-ui-link-arrow;
+}
+
+@media (hover:hover){
+  // remove hover from the whole block and add it just to the team names
+  .sdc-site-fixres__match:hover {
+    text-decoration: none
+  }
+
+  .sdc-site-fixres__match:hover
+  .sdc-site-fixres__team-name {
+    text-decoration: underline
+  }
+}
+
+/* SDC site footer skin
+  =========================================== */
+
+// variables
+$sdc-site-footer-z-index: $z-index-top!default;
+
+// extends
+.sdc-site-footer {
+  position: relative;
+}
+
+.sdc-site-footer__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+.sdc-site-footer [target="_blank"] {
+  @extend .sdc-ui-external-link!optional;
+}
+
+/* SDC site header skin
+  =========================================== */
+
+// variables
+$sdc-site-header-z-index: $z-index-top +1!default;
+$sdc-site-header-background: linear-gradient(to bottom, #0b0b44 0%,#0e0e79 100%)!default;
+$sdc-site-header-color: white!default;
+$sdc-site-header-mobile-nav-link-divide-color: 1px solid $lacerta!default;
+$sdc-site-header-hamburger-color: white!default;
+$sdc-site-header-hamburger-color-open: $auriga!default;
+$sdc-site-header-nav-link-icon-color: white!default;
+$sdc-site-header-nav-link-icon-color-mobile: $auriga!default;
+$sdc-site-header-nav-wrap-border-color: $lupus!default;
+$sdc-site-header-nav-link-underline-color: white!default;
+$sdc-site-header-drop-down-link-color: $auriga!default;
+$sdc-site-header-drop-down-link-border-color: $lupus!default;
+$sdc-site-header-drop-down-background: $lacerta!default;
+$sdc-site-header-action-button-background: $pictor!default;
+
+// overrides
+.sdc-site-header {
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-header__subnav-menu-item-link[target="_blank"],
+.sdc-site-header__menu-item-link[target="_blank"] {
+  @extend .sdc-ui-external-link!optional;
+}
+
+.sdc-site-header__inner,
+.sdc-site-header__subnav-menu {
+  @extend .site-wrap !optional;
+  @extend .site-wrap-padding!optional;
+}
+
+// main nav active style
+.sdc-site-header__menu-item-link[aria-current="true"] {
+  @include sdc-ui-block-link-underline($background-clip: content-box);
+}
+
+// main nav hover style
+// ensure background clip is sent to content box so line only spans text width
+.sdc-site-header__menu-item-link:hover {
+  @include sdc-ui-block-link-underline($background-clip: content-box);
+}
+
+.sdc-site-header__subnav-item-link:hover {
+  @include sdc-ui-block-link-underline($thickness: 2px);
+}
+
+.sdc-site-header__subnav-menu-item-link:hover {
+  @include sdc-ui-block-link-underline;
+}
+
+@media (hover: none){
+  .sdc-site-header__menu-item-link:hover,
+  .sdc-site-header__subnav-item-link:hover,
+  .sdc-site-header__subnav-menu-item-link:hover {
+    background-image: none
+  }
+}
+
+.sdc-site-header__action-button {
+  @include sdc-ui-button($color: white, $background-color: $pictor, $heavy: true);
+}
+
+
+@media #{$bp-xs}{
+  .sdc-site-header {
+    margin-bottom: 0
+  }
+}
+
+/* SDC site last games skin
+  =========================================== */
+
+// variables
+$sdc-site-last-games-text-color: inherit!default;
+$sdc-site-last-games-subtext-color: $crux!default;
+
+// extends
+.sdc-site-last-games {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin-l!optional;
+}
+
+.sdc-site-last-games__inner {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-last-games__team-name {
+  @extend .sdc-site-component-header--h3!optional;
+}
+/* SDC listing details
+  =========================================== */
+
+// variables
+$sdc-site-listing-details-offset-y: 0!default;
+
+// extends
+.sdc-site-listing-details-wrap {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-listing-details-box {
+  @extend %glints-box!optional;
+  @extend %glints-box-padding!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+.sdc-site-listing-details__item[class]:last-child,
+.sdc-site-listing-details__item[class]:only-child {
+  border-bottom: 0;
+}
+/* SDC site live on sky skin
+  =========================================== */
+
+// variables
+$sdc-site-live-on-sky-bg: $phoenix!default;
+$sdc-site-live-on-sky-mobile-bg: white!default;
+// $sdc-site-live-on-sky-color: white!default;
+
+$sdc-site-live-on-sky-hover-bg: $volans!default;
+$sdc-site-live-on-sky-hover-color: inherit!default;
+$sdc-site-live-on-sky-hover-transition-time: 0.5s!default;
+
+// extends
+.sdc-site-live-on-sky {
+  @extend %glints-box!optional;
+  @extend %glints-box-hover!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+.sdc-site-live-on-sky__category[class] {
+  @extend %sdc-ui-label!optional;
+}
+
+.sdc-site-live-on-sky__links {
+  @extend %sdc-ui-bullet-list!optional;
+}
+
+.sdc-site-load-more {
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-load-more__button {
+  @include sdc-ui-button;
+}
+
+/* SDC site localnav skin
+  =========================================== */
+
+// variables
+$sdc-site-localnav-z-index: $z-index-top - 1!default;
+$sdc-site-localnav-item-link-underline-color: $sirius!default;
+$sdc-site-localnav-link-mobile-keyline: $lupus!default;
+$sdc-site-localnav-header-keyline: $telescopium!default;
+$sdc-site-localnav-background: $lacerta!default;
+$sdc-site-localnav-margin-bottom: ignore!default;
+$sdc-site-localnav-more-background: $lacerta!default;
+$sdc-site-localnav-background-filter-more: white!default;
+
+// extends
+.sdc-site-localnav:not(.sdc-site-localnav--filter) {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.18);
+}
+
+.sdc-site-localnav__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+.sdc-site-localnav__item-link:hover,
+.sdc-site-localnav__item-link[aria-current] {
+  @include sdc-ui-block-link-underline($background-clip: content-box, $color: $sirius);
+}
+
+.sdc-site-localnav__header-title:hover {
+  text-decoration: none;
+}
+
+@media (hover: none){
+  .sdc-site-localnav__item-link:hover {
+    background: none;
+  }
+}
+
+.sdc-site-localnav [target="_blank"] {
+  @extend .sdc-ui-external-link!optional;
+}
+
+// make localnav white and add a border bottom if its underneath match header
+.sdc-site-match-header + .sdc-site-localnav {
+  background: white;
+}
+
+/* SDC site match area skin
+  =========================================== */
+
+// variables
+$sdc-site-match-header-color: $monoceros!default;
+$sdc-site-match-header-background: linear-gradient(to bottom, #101050 0%,#15156a 100%)!default;
+$sdc-site-match-header-body-background: rgba(0,0,0,0.20)!default;
+// LIGHT VERSION
+// $sdc-site-match-header-color: $auriga!default;
+// $sdc-site-match-header-background: $phoenix!default;
+// $sdc-site-match-header-body-background: rgba(0,0,0,0.05)!default;
+
+$sdc-site-match-header-result-color: $pyxis!default;
+$sdc-site-match-header-live-background: $pictor!default;
+$sdc-site-match-header-icon-red-background: $pictor!default;
+
+
+// extends
+.sdc-site-match-header__wrapper {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+.sdc-site-match-header__body {
+  @extend %glints-box!optional;
+}
+
+.sdc-site-match-header__links {
+  @extend %sdc-ui-bullet-list!optional;
+}
+
+/* SDC site match stats skin
+  =========================================== */
+
+// variables
+$sdc-site-match-stats-bar-background: $aquila!default;
+
+// extends
+.sdc-site-match-stats {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin-l!optional;
+}
+
+.sdc-site-match-stats__inner {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-message:not(.sdc-site-message--box) {
+  margin: $component-vertical-margin-xxl 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.sdc-site-message--box[class] {
+  padding-top: 0;
+  padding-bottom: 0;
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-message--box[class] .sdc-site-message__body {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+// extends
+.sdc-site-opta-widget {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.Opta[class],
+.opta-widget-container[class] {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-opta-widget .opta-widget-container h2 span {
+  @extend .sdc-site-component-header--h3!optional;
+}
+
+.sdc-site-opta-widget .opta-widget-container .fixtures .tennis-date h3 {
+  @extend .sdc-site-component-header--h4!optional;
+}
+
+/* pundits skin */
+/* ======= */
+
+// variables
+$sdc-site-pundits-indent-s: $site-indent-s!default;
+$sdc-site-pundits-bg: $phoenix!default;
+$sdc-site-pundits-hover-bg: $volans!default;
+$sdc-site-pundits-hover-color: #444!default;
+$sdc-site-pundits-figure-border: 5px solid white!default;
+
+// extends
+.sdc-site-pundits {
+  @extend %glints-box!optional;
+  @extend %glints-box-hover!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+/* SDC article roadblock skin
+  =========================================== */
+
+// variables
+
+// extends
+.sdc-site-roadblock__caption[class] {
+  @extend %sdc-ui-media-caption!optional;
+}
+
+.sdc-site-roadblock__button {
+  @include sdc-ui-button($color: white, $color-hover: #000)
+}
+
+/* SDC site share skin
+  =========================================== */
+
+.sdc-site-share[class] {
+  @extend .site-wrap !optional;
+  @extend .site-wrap-padding!optional;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sdc-article-body ~ .sdc-site-share,
+.sdc-article-video ~ .sdc-site-share,
+.sdc-article-gallery ~ .sdc-site-share,
+.sdc-site-view-manager ~ .sdc-site-share {
+  @extend %glints-border-top!optional;
+  padding: $component-vertical-margin-l 0 $component-vertical-margin-xl;
+}
+
+.sdc-site-share__title[class] {
+  @extend .sdc-site-component-header--h4!optional;
+  font-weight: bold!important;
+}
+
+/* SDC site table skin
+  =========================================== */
+
+// variables
+$sdc-site-table-row-divider-color: $auriga!default;
+$sdc-site-table-cell-border: 1px solid $lacerta!default;
+$sdc-site-table-head-cell-color: $crux!default;
+$sdc-site-table-row-highlight: $monoceros!default;
+
+// extends
+.sdc-site-table__container {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-table__body {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-table__caption {
+  @extend .sdc-site-component-header--h3!optional;
+}
+
+// add margin top when tables are stacked on top of each other
+.sdc-site-table +
+.sdc-site-table {
+  margin-top: 1.8em;
+}
+
+/* SDC site tabs skin
+  =========================================== */
+// variables
+$sdc-site-tabs-mobile-bp: 600px!default;
+$sdc-site-tabs-item-link-border: $aquila!default;
+
+// extends
+.sdc-site-tabs__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+}
+
+/* SDC site tags skin
+  =========================================== */
+
+$sdc-article-tags-font-size-title-default: 1.2rem!default;
+$sdc-article-tags-font-size-item-default: .9rem!default;
+$sdc-article-tags-item-colour: #063e7b!default;
+$sdc-article-tags-item-background: transparent!default;
+$sdc-article-tags-item-hover-background: #063e7b!default;
+
+.sdc-article-tags[class] {
+  @extend .site-wrap !optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-component-vertical-margin-s!optional;
+  @extend %glints-border-top !optional;
+  text-align: center;
+  margin-bottom: 0;
+  padding: $component-vertical-margin-l 0 $component-vertical-margin-xl;
+}
+
+.sdc-article-tags__title[class] {
+  @extend .sdc-site-component-header--h4!optional;
+  font-weight: bold!important;
+  display: block;
+}
+
+.sdc-article-tags__link[class] {
+  @include sdc-ui-button;
+  text-transform: none;
+  margin-bottom: 0.25em;
+}
+
+$pitch-color: linear-gradient(to bottom, #101050 0%,#15156a 100%)!default;
+
+.sdc-site-team-formations {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-team-formations__wrap {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+/* SDC site team lineups skin
+  =========================================== */
+
+// variables
+$sdc-site-team-lineup-column-padding: 0.3em!default;
+$sdc-site-team-lineup__header-formation-color: $crux!default;
+
+// extends
+.sdc-site-team-lineup {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+  @extend .site-component-vertical-margin!optional;
+}
+
+.sdc-site-team-lineup__inner {
+  @extend %glints-box!optional;
+  @extend %glints-box--mobile-edge!optional;
+  @extend %glints-box-padding!optional;
+}
+
+.sdc-site-team-lineup__header {
+  @extend .sdc-site-component-header--h3!optional;
+}
+
+/* tiles skin */
+/* ======= */
+
+// variables
+$sdc-site-tile-l: $site-indent-l!default;
+$sdc-site-tile-m: $site-indent-m!default;
+$sdc-site-tile-s: $site-indent-s!default;
+
+$sdc-site-tiles-gap-x: 24px!default;
+$sdc-site-tiles-gap-x-tablet: 24px!default;
+$sdc-site-tiles-gap-y: 24px!default;
+$sdc-site-tiles-gap-y-tablet: 24px!default;
+
+$sdc-site-tiles-gap-y-mobile: 8px!default;
+$sdc-site-tile-figure-width-mobile: 112px!default;
+
+$sdc-site-tile-transition-time: 1s!default;
+$sdc-site-tile-hover-image-transform: scale(1.05)!default;
+
+$sdc-site-tile-date-time-color: $crux!default;
+
+// hover colors
+$sdc-site-tile-background-image: $phoenix!default;
+$sdc-site-tile-hover-color: inherit!default;
+$sdc-site-tile-hover-background: $volans!default;
+
+// extends
+.sdc-site-tiles {
+  @extend .site-component-vertical-margin-l!optional;
+}
+
+.sdc-site-tiles__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+}
+
+.sdc-site-tile__body {
+  background: none!important;
+}
+
+.sdc-site-tile,
+.blackjack-sdc-site-tile {
+  @extend %glints-box!optional;
+  @extend %glints-box-hover!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+.sdc-site-tile__related[class] {
+  @extend %sdc-ui-bullet-list!optional;
+}
+
+.sdc-site-tile__tag[class] {
+  @extend %sdc-ui-label!optional;
+}
+
+/* trending skin */
+/* ======= */
+
+// variables
+$sdc-site-trending-number-color: $aquila!default;
+$sdc-site-trending-item-border: 1px solid $lacerta!default;
+
+// overrides
+.sdc-site-trending {
+  @extend .site-component-vertical-margin-l!optional;
+}
+
+.sdc-site-trending__inner {
+  @extend .site-wrap!optional;
+  @extend .site-wrap-padding!optional;
+  @extend .site-wrap--mobile-edge!optional;
+}
+
+.sdc-site-trending__body {
+  @extend %glints-box!optional;
+  @extend %glints-box-padding!optional;
+  @extend %glints-box--mobile-edge!optional;
+}
+
+.sdc-site-trending__items__supp-links {
+  @extend %sdc-ui-bullet-list!optional;
+}

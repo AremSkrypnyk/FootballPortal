@@ -1,0 +1,113 @@
+/* TILE GRID */
+/* ========= */
+
+.sdc-site-tiles__inner {
+  max-width: $sdc-site-tiles-width;
+  margin: 0 auto;
+}
+
+.sdc-site-tiles__group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sdc-site-tiles__group:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.sdc-site-tiles__item {
+  min-height: 50px;
+  display: block;
+  vertical-align: top;
+}
+
+.sdc-site-tiles--alt5
+.sdc-site-tiles__item {
+  display: block;
+  width: auto!important;
+  font-size: inherit;
+}
+
+
+@media #{$sdc-site-tiles-bp-desktop}{
+
+  .sdc-site-tiles__group {
+    margin-left: -$sdc-site-tiles-gap-x;
+    margin-bottom: -$sdc-site-tiles-gap-y;
+  }
+
+  .sdc-site-tiles__item {
+    display: inline-block;
+    width: calc(33.33% - #{$sdc-site-tiles-gap-x});
+    margin: 0 0 $sdc-site-tiles-gap-y $sdc-site-tiles-gap-x;
+
+    // if this component is used as a load more, specifiy how many items to show
+    counter-increment: items-to-show-3;
+  }
+
+  // ALTERNATIVE LAYOUTS
+
+  // 50%/50%
+  .sdc-site-tiles--alt1
+  .sdc-site-tiles__item,
+  // first row 33%/33%/33%, second 50%/50%
+  .sdc-site-tiles--alt2
+  .sdc-site-tiles__item:nth-child(5n+4),
+  .sdc-site-tiles--alt2
+  .sdc-site-tiles__item:nth-child(5n+5),
+   // first row 50%/50%, second 33%/33%/33%
+  .sdc-site-tiles--alt3
+  .sdc-site-tiles__item:nth-child(5n+1),
+  .sdc-site-tiles--alt3
+  .sdc-site-tiles__item:nth-child(5n+2) {
+    width: calc(50% - #{$sdc-site-tiles-gap-x});
+    font-size: 1.2em;
+    // if this component is used as a load more, specifiy how many items to show
+    counter-increment: items-to-show-2;
+  }
+
+}
+
+@media #{$sdc-site-tiles-bp-tablet-desktop}{
+
+  .sdc-site-tiles__group {
+    margin-left: -$sdc-site-tiles-gap-x-tablet;
+    margin-bottom: -$sdc-site-tiles-gap-y-tablet;
+  }
+
+  .sdc-site-tiles__item {
+    margin: 0 0 $sdc-site-tiles-gap-y-tablet $sdc-site-tiles-gap-x-tablet;
+    display: inline-block;
+    width: calc(50% - #{$sdc-site-tiles-gap-x-tablet});
+    // if this component is used as a load more, specifiy how many items to show
+    counter-increment: items-to-show-2;
+  }
+
+  /* 33%/33%/33% at desktop
+  100% at tablet/mobile */
+  .sdc-site-tiles--alt4
+  .sdc-site-tiles__item {
+    display: block;
+    width: auto;
+    flex: auto;
+    font-size: 1.3em;
+  }
+
+}
+
+@media #{$sdc-site-tiles-bp-tablet}{
+
+  .sdc-site-tiles__group {
+    margin-bottom: -$sdc-site-tiles-gap-y-mobile;
+    display: block;
+  }
+
+  .sdc-site-tiles__group >
+  .sdc-site-tiles__item[class] {
+    margin-bottom: $sdc-site-tiles-gap-y-mobile;
+    height: auto;
+    width: 100%;
+  }
+}

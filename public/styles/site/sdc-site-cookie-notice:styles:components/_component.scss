@@ -1,0 +1,113 @@
+.sdc-site-cookie-notice {
+    overflow: hidden;
+    width: 100%;
+    background: $sdc-site-cookie-notice-background;
+    font-size: $sdc-site-cookie-notice-font-size;
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+
+    .no-js & {
+        display: none;
+    }
+
+    &--fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        box-shadow: $sdc-site-cookie-notice-shadow;
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &--visible {
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    a {
+        color: $sdc-site-cookie-notice-link;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: $sdc-site-cookie-notice-link-border-hover;
+            color: $sdc-site-cookie-notice-link-hover;
+        }
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        padding: $sdc-site-cookie-notice-padding;
+        max-width: $sdc-site-cookie-notice-width;
+    }
+
+    &__text {
+        display: inline-block;
+        max-width: 85%;
+    }
+
+    &__close {
+        float: right;
+        margin: 2px 0;
+        padding: 0;
+        border: none;
+        background: 0 0;
+        font-size: 100%;
+        font-family: inherit;
+        cursor: pointer;
+        appearance: none;
+
+        &-text {
+            position: absolute;
+            overflow: auto;
+            clip: rect(1px, 1px, 1px, 1px);
+            margin-right: 8px;
+            width: 1px;
+            height: 1px;
+
+            &:hover {
+                border-bottom: $sdc-site-cookie-notice-link-border-hover;
+                color: $sdc-site-cookie-notice-link-hover;
+            }
+        }
+
+        &-icon {
+            position: relative;
+            top: -1px;
+
+            svg {
+                width: $sdc-site-cookie-notice-icon-size;
+                height: $sdc-site-cookie-notice-icon-size;
+                vertical-align: middle;
+            }
+            path {
+                fill: $sdc-site-cookie-notice-icon;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $sdc-site-cookie-notice-phoneplus-min) {
+    .sdc-site-cookie-notice {
+        &__text {
+            max-width: 95%;
+        }
+    }
+}
+
+@media screen and (min-width: $sdc-site-cookie-notice-tabletplus-min) {
+    .sdc-site-cookie-notice {
+        &__text {
+            max-width: 90%;
+        }
+        &__close-text {
+            position: static;
+            clip: rect(auto, auto, auto, auto);
+            width: auto;
+            height: auto;
+        }
+    }
+}

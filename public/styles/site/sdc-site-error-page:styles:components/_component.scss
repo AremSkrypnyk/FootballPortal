@@ -1,0 +1,74 @@
+.sdc-site-error-page,
+.sdc-site-error-page-container__advert {
+  padding: $sdc-site-error-page-padding;
+  text-align: left
+}
+
+.sdc-site-error-page__title {
+  font-size: 2.4em;
+  font-weight: 400;
+  line-height: 1.15em;
+  margin-bottom: 1em;
+}
+
+.sdc-site-error-page__body {
+  margin-bottom: 2em;
+}
+
+.sdc-site-error-page__text {
+  margin-bottom: 1em;
+  line-height: 1.4
+}
+
+.sdc-site-error-page__text:first-of-type {
+  font-weight: 600;
+  font-size: 1.08em
+}
+
+.sdc-site-error-page__link-text {
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.sdc-site-error-page__link-list {
+  display: block;
+  list-style: none;
+  padding: 0
+}
+
+.sdc-site-error-page__link-list-item {
+  margin-bottom: 0.25em
+}
+
+.sdc-site-error-page-container {
+  text-align: center;
+}
+
+.sdc-site-error-page-container__advert {
+  display: inline-block;
+}
+
+
+@media #{$sdc-site-error-page-desktop-bp}{
+  .sdc-site-error-page-container {
+    display: flex;
+  }
+
+  .sdc-site-error-page {
+    flex: 1;
+  }
+
+  .sdc-site-error-page-container__advert {
+    margin-left: 2em;
+    width: 300px
+  }
+}
+
+@media #{$sdc-site-error-page-mobile-bp}{
+  .sdc-site-error-page__title {
+    font-size: 1.8em;
+  }
+
+}
+

@@ -1,0 +1,91 @@
+/* TILE GRID FOR MPU */
+/* ========= */
+
+@media all and (max-width: 985px){
+
+  /*
+  mpu in live on sky module
+  33/33/33 at desktop
+  50/50 - 100 at tablet */
+  .sdc-site-tiles--alt6
+  .sdc-site-tiles__item {
+    width: calc(50% - #{$sdc-site-tiles-gap-x});
+  }
+
+  .sdc-site-tiles--alt6
+  .sdc-site-tiles__item:nth-child(3n+3) {
+    display: block;
+    width: auto;
+    flex: auto;
+    padding: 1em 0;
+  }
+
+  /*
+  mpu in fixtures module
+  66/33 at desktop
+  100/100 at tablet */
+  .sdc-site-tiles--alt7
+  .sdc-site-tiles__item {
+    width: 100%;
+    display: block;
+  }
+
+}
+
+@media all and (min-width: 986px){
+  .sdc-site-tiles--alt7
+  .sdc-site-tiles__item:first-of-type {
+    width: calc(66.6% - #{$sdc-site-tiles-gap-x});
+  }
+}
+
+/*
+mpu appearing in a story grid
+hide the corrosponding item in the row below when mpu goes double height
+*/
+.sdc-site-au[data-ad-format="grid-mpu"] {
+  position: relative;
+}
+
+.sdc-site-tiles__item >
+.sdc-site-au__grid-mpu {
+  width: 300px;
+  height: 250px;
+  margin: 5px auto 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 99
+}
+
+div[data-advert-rendered="300x600"] >
+.sdc-site-au__grid-mpu {
+  width: 300px;
+  height: 600px;
+}
+
+@media #{$sdc-site-tiles-bp-desktop} {
+  .sdc-site-au[data-advert-rendered="300x600"] +
+  .sdc-site-tiles__item +
+  .sdc-site-tiles__item +
+  .sdc-site-tiles__item {
+    visibility: hidden
+  }
+}
+
+@media #{$sdc-site-tiles-bp-tablet-desktop} {
+  .sdc-site-au[data-advert-rendered="300x600"] +
+  .sdc-site-tiles__item +
+  .sdc-site-tiles__item {
+    visibility: hidden
+  }
+}
+
+@media #{$sdc-site-tiles-bp-tablet} {
+  .sdc-site-tiles__item >
+  .sdc-site-au__grid-mpu  {
+    position: static;
+    margin: 1em auto;
+    transform: none;
+  }
+}

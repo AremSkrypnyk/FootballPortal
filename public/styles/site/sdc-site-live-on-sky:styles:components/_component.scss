@@ -1,0 +1,168 @@
+/* BLACKJACK-SDC-SITE-LIVE-ON-SKY */
+
+.sdc-site-live-on-sky {
+  text-align: center;
+  display: flex;
+}
+
+.sdc-site-live-on-sky__inner {
+  width: 100%;
+  padding: 1em 0;
+  background: $sdc-site-live-on-sky-bg;
+  color: $sdc-site-live-on-sky-color;
+}
+
+.sdc-site-live-on-sky__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sdc-site-live-on-sky__head,
+.sdc-site-live-on-sky__action,
+.sdc-site-live-on-sky__body,
+.sdc-site-live-on-sky__time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sdc-site-live-on-sky__head {
+  padding: 0.5em 0
+}
+
+.sdc-site-live-on-sky__head,
+.sdc-site-live-on-sky__time,
+.sdc-site-live-on-sky__logo {
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.sdc-site-live-on-sky__body {
+  flex: auto;
+  flex-direction: column;
+  padding: 0.6em 1.5em;
+}
+
+.sdc-site-live-on-sky__time {
+  height: 2.1em;
+}
+
+.sdc-site-live-on-sky__category {
+  font-weight: 200;
+  font-size: 0.9rem;
+  margin-bottom: 0.25em;
+  color: inherit;
+  position: relative;
+  z-index: 5;
+}
+
+.sdc-site-live-on-sky__category-link {
+  display: inline-block;
+  padding: 0.12em 0;
+  margin-bottom: 0.1em;
+  position: relative;
+  z-index: 5;
+}
+
+.sdc-site-live-on-sky__title {
+  font-size: 1.8em;
+  font-weight: bold;
+  width: 100%;
+  line-height: 1.1;
+}
+
+.sdc-site-live-on-sky__title em {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.64em;
+  line-height: 1;
+  color: inherit;
+  position: relative;
+  z-index: 3;
+}
+
+.sdc-site-live-on-sky__title-text {
+  background: inherit;
+  color: inherit;
+  position: relative;
+  z-index: 3
+}
+
+.sdc-site-live-on-sky__action {
+  flex-direction: column;
+  padding-bottom: 0.5em
+}
+
+.sdc-site-live-on-sky__links {
+  width: 100%;
+  margin-top: 1em;
+  color: inherit;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.sdc-site-live-on-sky__links-item {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.sdc-site-live-on-sky__logo {
+  height: 20px;
+}
+
+// tile hover
+.sdc-site-live-on-sky__link:before,
+.sdc-site-live-on-sky__wrap:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.sdc-site-live-on-sky__wrap:before {
+  opacity: 0;
+  background: $sdc-site-live-on-sky-hover-bg;
+  transition: opacity $sdc-site-live-on-sky-hover-transition-time;
+  will-change: opacity;
+  z-index: 1;
+}
+
+.sdc-site-live-on-sky--has-link:hover
+.sdc-site-live-on-sky__wrap:before {
+  opacity: 1;
+}
+
+.sdc-site-live-on-sky--has-link:hover,
+.sdc-site-live-on-sky--has-link:hover
+.sdc-site-live-on-sky__category {
+  color: $sdc-site-live-on-sky-hover-color;
+}
+
+@media #{$sdc-site-live-on-sky-large-mobile-bp}{
+  .sdc-site-live-on-sky__head {
+    display: none;
+  }
+}
+
+@media #{$sdc-site-live-on-sky-mobile-bp}{
+  .sdc-site-live-on-sky__inner {
+    font-size: 0.8em;
+    padding: 1em 0;
+    background: $sdc-site-live-on-sky-mobile-bg;
+  }
+
+  .sdc-site-live-on-sky__time {
+    height: 2em
+  }
+}

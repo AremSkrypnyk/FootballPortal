@@ -1,0 +1,65 @@
+/* START/RESET */
+/* ========= */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 100%
+}
+
+html {
+	font-size: 18px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none;
+	font-family: "Sky Text", sans-serif;
+	color: #333;
+	scroll-behavior: smooth;
+	word-wrap: break-word;
+	text-decoration-skip: ink;
+}
+
+body[data-body-locked='true']{
+	overflow: hidden;
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+	opacity: 1;
+	border: 0;
+}
+
+a,
+svg {
+	color: inherit;
+	fill: inherit;
+	text-decoration: none;
+}
+
+// add global hover underline...
+a:hover {
+	text-decoration: underline
+}
+
+// ...but remove this if on a touch screen
+// this prevents a user selecting the underlines when the scroll down the page
+@media (hover: none){
+	a[href]:hover {
+		text-decoration: none
+	}
+}
+
+// set browser focus styles to a thick solid line
+// return browser default color for UX familiarity
+:focus {
+	// outline-width: 3px;
+	// outline-style: solid;
+	// this helps the outline remain visible when the focusable element is set to overflow hidden.
+	outline-offset: -2px;
+}
+
+ul {
+	list-style: none;
+}

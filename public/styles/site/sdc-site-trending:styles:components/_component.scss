@@ -1,0 +1,97 @@
+/* COMPONENT */
+/* The main structural styles to create a vanilla version of this component */
+/* ========= */
+.sdc-site-trending {
+  font-size: 1em;
+  counter-reset: trending;
+  font-family: inherit;
+  color: $sdc-site-trending-color;
+}
+
+.sdc-site-trending__items {
+  margin-top: -0.4em
+}
+
+.sdc-site-trending__items,
+.sdc-site-trending__items__supp-links {
+  position: relative;
+  // ensure links sit above any polaris box styling
+  z-index: 5;
+  list-style: none;
+  padding: 0;
+}
+
+.sdc-site-trending__item {
+  display: table;
+  width: 100%;
+  border-bottom: $sdc-site-trending-item-border;
+}
+
+.sdc-site-trending__item:before {
+  content: counter(trending);
+  counter-increment: trending;
+  display: table-cell;
+  vertical-align: middle;
+  width: 1.75em;
+  font-size: 1.25em;
+  text-align: left;
+  height: 2.75em;
+  color: $sdc-site-trending-number-color;
+}
+
+.sdc-site-trending__link {
+  padding: 0;
+  // font-weight: bold;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sdc-site-trending__link-text {
+  padding: 0.12em 0
+}
+
+.sdc-site-trending__items__supp-links {
+  margin: 0.9em 0 -0.25em;
+}
+
+.sdc-site-trending__items__supp-link {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+
+@media all and (min-width: 680px){
+
+  .sdc-site-trending__items {
+    column-count: 2;
+    column-gap: 2em;
+    padding: 0 0.2em;
+  }
+
+  .sdc-site-trending__item:nth-of-type(5n){
+    border-bottom: 0
+  }
+
+}
+
+@media all and (min-width: 960px){
+
+  .sdc-site-trending__items,
+  .sdc-site-trending__items__supp-links {
+    column-gap: 3em;
+    padding: 0 1em;
+  }
+
+}
+
+@media #{$sdc-site-trending-bp-xs}{
+
+  .sdc-site-trending__item:before {
+    text-align: center;
+    padding-right: 0.4em;
+  }
+
+  .sdc-site-trending__items__supp-links {
+    margin-bottom: 0.5em;
+  }
+}

@@ -1,0 +1,186 @@
+/* Glints
+  =========================================== */
+
+%glints-shine-top,
+%glints-shine-bottom {
+  position: relative;
+}
+
+%glints-shine-top:before,
+%glints-shine-bottom:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: 6px;
+  background: rgba(255,255,255,0.25);
+  pointer-events: none;
+
+  @supports (mix-blend-mode: overlay) {
+    mix-blend-mode: overlay;
+    background: rgba(255,255,255,1);
+  }
+
+  @media #{$bp-s} {
+    height: 5px;
+  }
+
+   @media #{$bp-xs} {
+    height: 4px;
+  }
+}
+
+// top and bottom shine
+%glints-shine-top:before {
+  top: 0;
+}
+
+%glints-shine-bottom:after {
+  bottom: 0;
+}
+
+// glints box
+%glints-box {
+  border: 5px solid rgba(255,255,255,0.1);
+  background-color: white;
+  background-clip: padding-box;
+  position: relative;
+}
+
+%glints-box:before {
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.14);
+  border: 1px solid rgba(255,255,255,0);
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+}
+
+%glints-box-hover:after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: -15px;
+  left: -5px;
+  bottom: -15px;
+  right: -5px;
+  background-image:
+    radial-gradient(hsla(0,0%,100%,.8) 15%, hsla(0,0%,100%,.15) 38%, hsla(0,0%,100%,0) 50%),
+    radial-gradient(hsla(0,0%,100%,.8) 15%, hsla(0,0%,100%,.15) 38%, hsla(0,0%,100%,0) 50%),
+    radial-gradient(hsla(0,0%,100%,.8) 15%, hsla(0,0%,100%,.35) 35%, hsla(0,0%,100%,.15) 40%,hsla(0,0%,100%,0) 50%),
+    radial-gradient(hsla(0,0%,100%,.8) 15%, hsla(0,0%,100%,.35) 35%, hsla(0,0%,100%,.15) 40%,hsla(0,0%,100%,0) 50%);
+  background-repeat: no-repeat;
+  background-position:
+  left -120px top 6px,
+  right -120px bottom 5px,
+  left 0 top -1px,
+  right 0 bottom -2px;
+  background-size:
+    300px 14px,
+    300px 14px,
+    60px 28px,
+    60px 28px;
+  opacity: 0;
+  transition: background-position 0.5s ease-out, opacity 0.5s ease-out;
+  will-change: background-position, opacity;
+}
+
+%glints-box-hover:hover:after {
+  background-position:
+  left calc(100% + 67px) top 6px,
+  right calc(100% + 67px) bottom 5px,
+  left calc(100% - 50px) top -1px,
+  right calc(100% - 50px) bottom -1px;
+  opacity: 0.9;
+}
+
+// ensure glints effect does no display on touch screens
+@media (pointer: coarse){
+  %glints-box-hover:after {
+    content: none;
+  }
+}
+
+// if pointer events supported, move the glint layer above everything else
+@supports (pointer-events: none){
+  %glints-box-hover:after {
+    z-index: 5;
+  }
+}
+
+%glints-box-padding {
+  padding: 1.8em;
+}
+
+// glints panel gradients
+%glints-vertical-gradient {
+  background-image: linear-gradient(0deg,#fff,#e1e0e4);
+}
+
+.glints-box {
+  @extend %glints-box;
+}
+
+.glints-box-padding {
+  @extend %glints-box-padding;
+}
+
+// glints border
+%glints-border-top,
+%glints-border-bottom {
+  position: relative;
+}
+
+%glints-border-top:before,
+%glints-border-bottom:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: 1px;
+  background-image: linear-gradient(90deg,#fff,#e2e2e2,#fff);
+  pointer-events: none;
+}
+
+%glints-border-top:before {
+  top: 0;
+}
+
+%glints-border-bottom:after {
+  bottom: 0;
+}
+
+@media #{$bp-s} {
+
+  %glints-box-padding {
+    padding: 1.4em;
+  }
+
+}
+
+@media #{$bp-xs} {
+
+  %glints-box--mobile-edge[class] {
+    border: 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    background-color: white;
+    background-image: none;
+  }
+
+  %glints-box--mobile-edge:after,
+  %glints-box--mobile-edge:before {
+    content: none;
+  }
+
+  %glints-box-padding {
+    padding: 1em $site-indent-s;
+  }
+
+}

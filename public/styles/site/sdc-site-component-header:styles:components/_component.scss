@@ -1,0 +1,80 @@
+/* COMPONENT */
+/* The main structural styles to create a vanilla version of this component */
+/* ========= */
+
+@mixin sdc-site-component-header {
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 0.75em!important;
+}
+
+.sdc-site-component-header__body {
+  display: block
+}
+
+/* Header size/importance hieracies in descending orders */
+.sdc-site-component-header--h1 {
+  @include sdc-site-component-header;
+  font-size: 2.3em!important;
+  text-align: $sdc-site-component-header-h1-align;
+}
+
+.sdc-site-component-header--h2 {
+  @include sdc-site-component-header;
+  font-size: 2em!important;
+  text-align: $sdc-site-component-header-h2-align
+}
+
+.sdc-site-component-header--h3 {
+  @include sdc-site-component-header;
+  font-size: 1.4em!important;
+  text-align: $sdc-site-component-header-h3-align;
+}
+
+.sdc-site-component-header--h4 {
+  @include sdc-site-component-header;
+  font-size: 1.1em!important;
+  text-align: $sdc-site-component-header-h4-align;
+}
+
+.sdc-site-component-header--h5 {
+  @include sdc-site-component-header;
+  font-size: 1em!important;
+  text-align: $sdc-site-component-header-h5-align;
+}
+
+.sdc-site-component-header__logo {
+  height: 1.5rem;
+}
+
+@media all and (max-width: 600px){
+
+  .sdc-site-component-header--h1 {
+    font-size: 1.65em!important;
+  }
+
+  .sdc-site-component-header--h2 {
+    font-size: 1.45em!important;
+  }
+
+  .sdc-site-component-header--h3 {
+    font-size: 1.25em!important;
+  }
+
+  .sdc-site-component-header__logo {
+    height: 1.2rem;
+  }
+
+}
+
+@media #{$sdc-site-component-header-short-text-bp}{
+
+  .sdc-site-component-header__body[data-short-text] >
+  [data-role="short-text-target"] {
+    display: none
+  }
+
+  .sdc-site-component-header__body[data-short-text]:before {
+    content: attr(data-short-text)
+  }
+}

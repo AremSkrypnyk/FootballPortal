@@ -526,7 +526,23 @@ a:active:not(.no-default-active),
   opacity: 1 !important
 }
 
-a:active:not(.no-default-active),
-.no-touch a:hover:not(.no-default-hover) {
-  background-color: rgba(0, 0, 0, 0.08)
+.no-touch .button:hover:not(.no-default-hover) {
+  background-color: #f4f4f4
+}
+
+.button:active {
+  outline: none
+}
+
+.button:active:not(.no-default-hover) {
+  background-color: #f4f4f4;
+  outline: none
+}
+
+.no-touch .button--primary:hover:not(.no-default-hover) {
+  background-color: #2453c9
+}
+
+.button--primary:active:not(.no-default-hover) {
+  background-color: #2453c9
 }

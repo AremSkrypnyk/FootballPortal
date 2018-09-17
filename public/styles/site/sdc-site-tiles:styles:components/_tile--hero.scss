@@ -1,0 +1,171 @@
+/* HERO TILE VARIATIONS */
+/* ========= */
+
+@media #{$sdc-site-tiles-bp-desktop}{
+
+  .sdc-site-tile[data-type~="hero-horizontal"]{
+    display: table;
+    display: flex;
+    width: calc(100% - #{$sdc-site-tiles-gap-x})
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__figure {
+    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    width: 66.5%
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__body {
+    display: table-cell;
+    vertical-align: middle;
+    width: 33.5%;
+    padding: 0 1.9em;
+    display: flex;
+    flex-direction: column;
+  }
+
+    // 50/50 layout between image and text
+  .sdc-site-tile[data-type~="hero-horizontal-t2"]
+  .sdc-site-tile__body,
+  .sdc-site-tile[data-type~="hero-horizontal-t2"]
+  .sdc-site-tile__figure {
+    width: 50%;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__headline {
+    font-size: 1.7em;
+    margin-bottom: 0.7em;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__body-main {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    justify-content: center;
+    padding-top: 1.9em;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__body > :last-child {
+    padding-bottom: 1.9em;
+  }
+
+}
+
+@media #{$sdc-site-tiles-bp-tablet-desktop}{
+
+  // hero-horizontal goes full width vertical at table
+  .sdc-site-tile[data-type~="hero-horizontal"]{
+    display: block;
+    width: 100%;
+    flex: auto;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__headline {
+    font-size: 1.7em;
+  }
+
+  // as hero-horizontal on desktip but for tablet only
+  .sdc-site-tile[data-type~="hero-horizontal-tablet"] {
+    display: table;
+    display: flex;
+    width: calc(100% - #{$sdc-site-tiles-gap-x});
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal-tablet"]
+  .sdc-site-tile__figure {
+    display: table-cell;
+    vertical-align: middle;
+    width: 60%;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal-tablet"]
+  .sdc-site-tile__body {
+    display: table-cell;
+    vertical-align: middle;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .sdc-site-tile[data-type~="hero-horizontal-tablet"]
+  .sdc-site-tile__headline {
+    font-size: 1.5em;
+  }
+
+}
+
+@media #{$sdc-site-tiles-bp-desktop}, #{$sdc-site-tiles-bp-tablet-desktop} {
+  .sdc-site-tile[data-type~="hero-horizontal"] {
+    // background: hotpink;
+  }
+}
+
+@media #{$sdc-site-tiles-bp-tablet}{
+
+  // if its a hero tile bump up font size on headline
+  .sdc-site-tile[data-type~="hero-horizontal"]
+  .sdc-site-tile__headline {
+    font-size: 1.35em;
+  }
+
+  // if its NOT a hero tile, make it horizontal
+  .sdc-site-tile:not([data-type*="hero"]) {
+    display: table;
+    width: 100%;
+    padding: 0.8em $sdc-site-tile-indent-m;
+  }
+
+  .sdc-site-tile:not([data-type*="hero"]) >
+  .sdc-site-tile__figure {
+    display: table-cell;
+    vertical-align: middle;
+    width: $sdc-site-tile-figure-width-mobile;
+  }
+
+  .sdc-site-tile:not([data-type*="hero"]) >
+  .sdc-site-tile__body {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0.2em 10px 0 $sdc-site-tile-figure-indent-mobile;
+  }
+
+  .sdc-site-tile:not([data-type*="hero"])
+  .sdc-site-tile__headline {
+    font-size: 1em;
+    line-height: 1.2
+  }
+
+  .sdc-site-tile__tag {
+    margin-bottom: 0.1em;
+  }
+
+  // set mobile thumbnails to be 4:3 aspect ratio if picture tag is supported
+  // using @supports as a rough analogue for picture support
+  @supports (display: none){
+    .sdc-site-tile:not([data-type*="hero"])
+    .sdc-site-tile__image-wrap:after {
+      padding-bottom: 75%
+    }
+  }
+
+  .sdc-site-tile:not([data-type*="hero"])
+  .sdc-site-tile__badge > svg{
+    min-width: 36px;
+    transform: translate(9px, -9px);
+  }
+}
+
+@media #{$sdc-site-tiles-bp-mobile}{
+  .sdc-site-tile:not([data-type*="hero"]) {
+    padding: 0.8em $sdc-site-tile-indent-s;
+  }
+}

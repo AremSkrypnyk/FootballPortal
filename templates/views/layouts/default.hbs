@@ -4,172 +4,129 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FootballPortal</title>
+	<title>Football Portal</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link href="/styles/site.css" rel="stylesheet">
+	<script src="/js/jquery/jquery-2.1.4.min.js"></script>
 
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor
         - only renders when user is logged in and admin--}}
 	{{{isAdminEditorCSS user}}}
 
-	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    //- Safely remove this block if you are not targeting IE8 --}}
-	<!--[if lt IE 9]>
-	<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-	<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 </head>
 <body>
-<div class="site-header">
+<div class="blackjack-sdc-digrev-header" data-component-name="blackjack-sdc-digrev-header" data-init="true">
+	<div class="site-header">
 
-	<div class="site-header__body">
+		<div class="site-header__body">
 
-		<div class="site-header__col site-header__col1">
-			<a href="http://www.skysports.com" class="svg-logo site-header__logo">
-				<img class="svg-logo__image" src="/images/Sky-Sports-Logo-transparent.svg"
-					 onerror="this.onerror=null;this.src='/images/Sky-Sports-Logo.png'">
+			<div class="site-header__col site-header__col1">
+				<a href="/" class="svg-logo site-header__logo">
+					<img class="svg-logo__image" src="/images/Sky-Sports-Logo-transparent.svg" alt="Sky Sports"
+						 onerror="this.onerror=null;this.src='/images/Sky-Sports-Logo-transparent.png'">
+				</a>
+			</div>
+
+			<div class="site-header__col site-header__col2">
+
+			</div>
+
+			<div class="site-header__col site-header__col3">
+
+				<form action="/search" method="GET" class="site-search">
+					<input type="text" name="q" placeholder="Search Player" accesskey="q" autocomplete="off"
+						   autocorrect="off" autocapitalize="off" class="site-search__input">
+					<input type="hidden" value="the site" name="searchtype">
+					<input type="hidden" name="v" value="2">
+					<button class="site-search__button">
+						<span class="site-search__button-label">Search</span>
+						<svg class="site-nav-desktop__icon" width="2048" height="2048" viewBox="0 0 2048 2048">
+							<path d="M2038.957 1834.615l-636.008-634.508c83.804-123.102 133.1-271.75 133.1-432.1 0-424.353-343.702-768.01-768-768.01-2.655 0-5.202.407-7.905.407C564.7-2.252 368.395 70.45 219.293 219.552 69.145 369.452-3.457 567.21.246 763.71c0 1.444-.203 2.75-.203 4.296 0 424.203 343.75 768.007 768.008 768.007 159.353 0 307.298-48.602 430-131.5l636.204 634.398c12 12.103 31.703 12.103 43.703.103l161-160.797c12-12 12-31.702 0-43.6zm-896.805-693.008c-187.852 187.805-476.805 212.102-691.555 74.398-143.25-107.797-245.75-277.296-245.75-448 0-282.805 280.398-563.203 563.203-563.203 171.602 0 341.898 103.5 449.703 247.898 136.4 214.658 111.595 501.806-75.6 688.907z"></path>
+						</svg>
+					</button>
+				</form>
+
+			</div>
+
+			<a class="site-header__col site-header__col4 site-header__nav-button-hit-area"
+			   data-role="open-left-hand-nav" href="#no-js-nav" aria-controls="site-nav-desktop-wrap"
+			   aria-expanded="false">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" xml:space="preserve" class="site-header__nav-button">
+              <rect y="384" width="2048" height="256"></rect>
+              <rect y="896" width="2048" height="256"></rect>
+              <rect y="1408" width="2048" height="256"></rect>
+          </svg>
 			</a>
-		</div>
-
-
-		<div class="site-header__col site-header__col3">
-
 
 		</div>
-
-		<a class="site-header__col site-header__col4 site-header__nav-button-hit-area" data-role="open-left-hand-nav"
-		   href="#no-js-nav" tabindex="1">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" xml:space="preserve" class="site-header__nav-button">
-            <rect y="384" width="2048" height="256"></rect>
-            <rect y="896" width="2048" height="256"></rect>
-            <rect y="1408" width="2048" height="256"></rect>
-        </svg>
-		</a>
-
-	</div>
-
-	<!-- desktop nav -->
-	<div class="site-nav-desktop__wrap adaptive-content adaptive-content--loaded" data-fn="adaptive-content"
-		 data-lite="true" aria-hidden="true" id="widgetLite-10" style="animation: adaptiveContent20281 0.01s linear;">
-		<div class="site-nav-desktop" role="navigation" data-fn="site-nav-desktop" data-lite="true" id="widgetLite-14">
-			<ul class="site-nav-desktop__body">
-				{{# each navLinks}}
-					<li class="site-nav-desktop__item">
-						<a href="{{ href }}" class="site-nav-desktop__item-link">{{ label }}</a>
-					</li>
-				{{/each}}
-				<li class="site-nav-desktop__item">
-					<a href="#site-nav-desktop-more-more-nav"
-					   class="site-nav-desktop__item-link site-nav-desktop__item-link--more"
-					   aria-controls="site-nav-desktop-more-more-nav" id="site-nav-desktop-more-more">
-						More</a>
-					<div class="site-nav-desktop__menu site-nav-desktop__menu--right"
-						 aria-labelledby="site-nav-desktop-more-more" id="site-nav-desktop-more-more-nav">
-						<div class="site-nav-desktop__menu-body">
-							<ul class="site-nav-desktop__menu-links">
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/transfer-centre">
-										Transfer Centre</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/watch/sport-on-sky">
-										Live on Sky</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/watch/get-sky">
-										Get Sky Sports</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/watch/tv-shows">
-										TV Shows</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/watch/tv-guide">
-										TV Guide</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/competitions">
-										Competitions</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="http://go.sky.com/" target="_blank">
-										Sky Go</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link"
-									   href="http://www.nowtv.com/promo/sky-sports?DCMP=ilc_skysports_moredropdownlink"
-									   target="_blank">
-										Now TV</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://pubfinder.sky.com/"
-									   target="_blank">
-										Pub Finder</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://www.teamsky.com"
-									   target="_blank">
-										Team Sky</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/watch/tv-shows/sportswomen">
-										Sportswomen</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/scholarships">
-										Sports Scholarships</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/clubsincommunities">
-										Clubs in Communities</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/podcasts">
-										Podcasts</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/mobile">
-										Mobile</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://twitter.com/SkySports"
-									   target="_blank">
-										Twitter</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://www.facebook.com/SkySports"
-									   target="_blank">
-										Facebook</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://livingforsport.skysports.com/"
-									   target="_blank">
-										Living for Sport</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="/contact-us">
-										Contact Us</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link"
-									   href="https://www.sky.com/help/articles/skycom-terms-and-conditions"
-									   target="_blank">
-										Terms &amp; Conditions</a>
-								</li>
-								<li class="site-nav-desktop__menu-item">
-									<a class="site-nav-desktop__menu-link" href="https://www.sky.com" target="_blank">
-										Sky.com</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<a href="http://www.skysports.com/watch"
-			   class="site-nav-desktop__watch-button no-default-hover no-default-active"><span
-					class="site-nav-desktop__watch-button__label">Pro Users Login</span></a>
+		<!-- desktop nav -->
+		<div class="site-nav-desktop__wrap">
+			<div class="site-nav-desktop" role="navigation" data-role="main-nav" id="site-nav-desktop-wrap"
+				 aria-hidden="true">
+				<ul class="site-nav-desktop__body">
+					{{# each navLinks}}
+						<li class="site-nav-desktop__item">
+							{{#if submenu}}
+								<a href="#no-js-nav"
+								   class="site-nav-desktop__item-link site-nav-desktop__item-link--more"
+								   aria-controls="site-nav-desktop-sports-more-nav"
+								   id="site-nav-desktop-sports-more">{{ label }}
+									<svg viewBox="0 0 2048 2048" class="site-nav-desktop__icon" aria-hidden="true">
+										<path d="M1024.21 1662.938L2048 638.906l-254.016-253.844-769.773 769.594-769.89-769.594L0 639.022l977.914 977.5"></path>
+									</svg>
+								</a>
+								<div class="site-nav-desktop__menu" aria-labelledby="site-nav-desktop-sports-more"
+									 id="site-nav-desktop-sports-more-nav">
+									<div class="site-nav-desktop__menu-body">
+										<ul class="site-nav-desktop__menu-links">
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/contact">
+													All</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/gallery">
+													Right back</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/cricket">
+													Center back left</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/rugby-union">
+													Center back right</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/rugby-league">
+													Left back</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/golf">
+													Defending midfielder</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/boxing">
+													Central midfielder</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/tennis">
+													Attacking midfielder</a>
+											</li>
+											<li class="site-nav-desktop__menu-item">
+												<a class="site-nav-desktop__menu-link" href="/cycling">
+													Attacker</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{{else}}
+								<a href="{{ href }}" class="site-nav-desktop__item-link">{{ label }}</a>
+							{{/if}}
+						</li>
+					{{/each}}
+				</ul>
+			</div>
 		</div>
+
 	</div>
 </div>
 
@@ -205,22 +162,8 @@
 	<!-- The content block should contain the body of your template's content-->
 	{{{body}}}
 </div>
-<div class="container">
-	<div id="footer">
-		<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-	</div>
-</div>
-{{!--
-    //- jQuery 1.11.3 is included by default, and required by both Bootstrap
-    //- and the KeystoneJS Content Editor. If you are not targeting IE8,
-    //- you can upgrade to 2.1.4 (also bundled) for better performance.
---}}
-<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-{{!--
-    //- Customise which Bootstrap javascript files are served by including
-    //- them specifically here, instead of bootstrap-3.3.5.min.js
---}}
-<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+
+<script src="/js/main.js"></script>
 {{{isAdminEditorJS user}}}
 </body>
 </html>

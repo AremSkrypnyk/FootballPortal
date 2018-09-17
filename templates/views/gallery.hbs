@@ -1,32 +1,112 @@
-<div class="container">
-	<h1>Gallery</h1>
-</div>
-<div class="container">
-	<!-- if galleries -->
-	{{#if galleries}}
-		{{#each galleries}}
-		<h2>{{name}}
-			<div class="pull-right text-muted">19th May 2014</div>
-		</h2>
-		<div class="row gallery-images">
-				{{#if heroImage}}
-				<div class="col-sm-4 col-md-4 gallery-image">
-					<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-				</div>
-				{{/if}}
-				<div class="col-sm-8 col-md-8">
-					<div class="row">
-						{{#each images}}
-						<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-							<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-						</div>
-						{{/each}}
+{{!< default}}
+<div class="sdc-site-tiles">
+	<div class="sdc-site-tiles__inner">
+		<div class="sdc-site-tiles__group">
+
+			<div class="sdc-site-tiles__item sdc-site-tile sdc-site-tile--has-link" data-type="hero-horizontal"
+				 data-role="load-more-item">
+				<figure class="sdc-site-tile__figure" aria-hidden="true">
+					<div class="sdc-site-tile__image-wrap">
+						<picture>
+							<source srcset="https://e2.365dm.com/18/08/384x216/skysports-arsenal-chelsea-cesar_4377902.jpg?20180801212000 400w, https://e2.365dm.com/18/08/768x432/skysports-arsenal-chelsea-cesar_4377902.jpg?20180801212000 1000w"
+									data-srcset="https://e2.365dm.com/18/08/384x216/skysports-arsenal-chelsea-cesar_4377902.jpg?20180801212000 400w, https://e2.365dm.com/18/08/768x432/skysports-arsenal-chelsea-cesar_4377902.jpg?20180801212000 1000w"
+									sizes="100vw">
+
+							<img src="https://e2.365dm.com/18/08/768x432/skysports-arsenal-chelsea-cesar_4377902.jpg?20180801212000"
+								 alt="Cesar Azpilicueta chased by Mesut Ozil in Chelsea&amp;#39;s friendly with Arsenal"
+								 class="sdc-site-tile__image">
+						</picture>
 					</div>
+				</figure>
+
+				<div class="sdc-site-tile__body">
+					
+					<div class="sdc-site-tile__body-main">
+						<h3 class="sdc-site-tile__headline">
+                			<span class="sdc-site-tile__headline-link">
+              					<span class="sdc-site-tile__headline-text">
+									Mohamed Salah
+								</span>
+                			</span>
+						</h3>
+					</div>
+					
+					<ul class="sdc-site-tile__related">
+						<li class="sdc-site-tile__related-item">
+							<p>Date of birth:
+								<span itemprop="birthDate">
+									30.06.1992
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Current club:
+								<span>
+									Liverpool
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Position:
+								<span>
+									Right Winger
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Age:
+								<span>
+									28
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Height:
+								<span>
+									1,68m 
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Foot:
+								<span>
+									Left
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Player agent:
+								<span>
+									Mikhail Metreveli
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Joined:
+								<span>
+									30.06.2005
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Contract until:
+								<span>
+									30.06.2021
+								</span>
+							</p>
+						</li>
+						<li class="sdc-site-tile__related-item">
+							<p>Market Value:
+								<span>
+									$100m
+								</span>
+							</p>
+						</li>
+					</ul>
 				</div>
+			</div>
+
+
 		</div>
-		{{/each}}
-	{{else}}
-	<!-- else -->
-	<h3 class="text-muted">There are no image galleries yet.</h3>
-	{{/if}}
+	</div>
 </div>

@@ -1,3 +1,4 @@
+/*
 // Bootstrap
 // =========
 
@@ -20,3 +21,39 @@
 
 // Add your own site style includes here
 @import "site/layout";
+*/
+
+// Import variables
+@import "site/sdc-project-base:css:base/sdc-skin/_settings.scss";
+@import "site/sdc-project-base:css:base/sdc-skin/_palette.scss";
+
+// Import base styles
+@import "site/sdc-project-base:css:base/core/_fonts.scss";
+@import "site/sdc-project-base:css:base/core/_start.scss";
+@import "site/sdc-project-base:css:base/sdc-skin/_site-layout.scss";
+@import "site/sdc-project-base:css:base/sdc-skin/_ui.scss";
+@import "site/sdc-project-base:css:base/component-skin/*.scss";
+@import "site/sdc-project-base:css:base/sdc-skin/_glints.scss";
+
+//Import header styles
+@import "site/sdc-site-component-header:styles:components/_skin.scss";
+@import "site/sdc-site-component-header:styles:components/_component.scss";
+
+//Import extended header styles
+@import "site/blackjack-sdc-digrev-header:styles:components/_skin.scss";
+@import "site/blackjack-sdc-digrev-header:styles:components/_component.scss";
+
+//Import breaking news styles
+@import "site/sdc-site-breaking-news:styles:components/_skin.scss";
+@import "site/sdc-site-breaking-news:styles:components/_component.scss";
+
+//Import tile styles
+@import "site/sdc-site-tiles:styles:components/_skin.scss";
+@import "site/sdc-site-tiles:styles:components/_tile.scss";
+@import "site/sdc-site-tiles:styles:components/_tile--hero.scss";
+@import "site/sdc-site-tiles:styles:components/_tile-grid.scss";
+@import "site/sdc-site-tiles:styles:components/_tile-grid-mpu.scss";
+
+//Import football styles
+//@import "site/football/styles.scss";
+

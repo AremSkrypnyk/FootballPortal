@@ -1,0 +1,52 @@
+/* SKIN */
+/* Default styling paramters for this component that can be overwritten at project level */
+/* ========= */
+
+// widths
+$sdc-site-tiles-width: auto!default;
+
+// z-index
+$sdc-site-tile-link-zindex: 2!default;
+
+// transition time
+$sdc-site-tile-transition-time: 0.5s!default;
+
+// x and y gaps between tile items
+$sdc-site-tiles-gap-x: 18px!default;
+$sdc-site-tiles-gap-y: 18px!default;
+
+// indents
+$sdc-site-tile-indent-l: 24px!default;
+$sdc-site-tile-indent-m: 20px!default;
+$sdc-site-tile-indent-s: 16px!default;
+
+// same for tablet
+$sdc-site-tiles-gap-x-tablet: 18px!default;
+$sdc-site-tiles-gap-y-tablet: 18px!default;
+
+// same for mobile
+$sdc-site-tiles-gap-x-mobile: 12px!default;
+$sdc-site-tiles-gap-y-mobile: 12px!default;
+
+$sdc-site-tile-figure-width-mobile: 116px!default;
+$sdc-site-tile-figure-indent-mobile: 14px!default;
+
+// default tile background color
+$sdc-site-tile-background-color: #fff!default;
+$sdc-site-tile-background-image: none!default;
+
+// hover effects
+$sdc-site-tile-hover-color: inherit!default;
+$sdc-site-tile-hover-background: inherit!default;
+$sdc-site-tile-hover-image-transform: scale(1.1)!default;
+
+// text colors
+$sdc-site-tile-tag-color: #0a1388!default;
+$sdc-site-tile-related-color: #888!default;
+$sdc-site-tile-date-time-color: #ccc!default;
+
+// breakpoints
+$sdc-site-tiles-bp-desktop: "all and (min-width: 860px)!default";
+$sdc-site-tiles-bp-tablet-desktop: "all and (min-width: 600px) and (max-width: 859px)!default";
+$sdc-site-tiles-bp-tablet: "all and (max-width: 599px)!default";
+$sdc-site-tiles-bp-mobile: "all and (max-width:480px)!default";
