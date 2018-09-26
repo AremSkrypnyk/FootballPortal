@@ -59,7 +59,7 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
-			perPage: 10,
+			perPage: 4,
 			maxPages: 10,
 			filters: {
 				state: 'published',
@@ -74,6 +74,7 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
+			console.log(locals.data.posts.results);
 			next(err);
 		});
 	});
